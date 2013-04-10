@@ -10,30 +10,36 @@ using namespace MeshLib;
 
 int main( int argc, char * argv[] )
 {
+	const char* wout[2] = {"kitten_w_0.m","kitten_w_1.m"};
+	const char* uout[2] = {"kitten_u_0.m","kitten_u_1.m"};
 	// compute harmonic_form [21:40/4/9/2013 Zhe]
-	CMesh cmesh;
-	cmesh.read_m( argv[1] );
-	CMesh wmesh;
-	wmesh.read_m( argv[2] );
+	for (int j = 0;j < 2; j++)
+	{
+		CMesh cmesh;
+		cmesh.read_m( argv[1] );
+		CMesh wmesh;
+		wmesh.read_m( argv[j+2] );
 
-	CHarmonicFormTrait  mtraits( &cmesh );
-	CHarmonicFormTrait  wtraits( &wmesh );
+		CHarmonicFormTrait  mtraits( &cmesh );
+		CHarmonicFormTrait  wtraits( &wmesh );
 
-	CHarmonicForm harmonic( & cmesh, &wmesh );
-	harmonic.calculate_harmonic_form();
+		CHarmonicForm harmonic( & cmesh, &wmesh );
+		harmonic.calculate_harmonic_form();
 
-	cmesh.write_m( argv[3] );
-	wmesh.write_m( argv[4] );
+		cmesh.write_m( wout[j] );
+		wmesh.write_m( uout[j] );
+	}	
 	//end
 
+	// computer the holomorphic 1-from [1:40/4/10/2013 Zhe]
 	std::list<CMesh*> meshes;
 	std::list<CHolomorphicFormTrait*> traits;
 
-	for( int i = 1; i < argc; i ++ )
+	for( int i = 0; i < 2; i ++ )
 	{
 		CMesh * pMesh = new CMesh;
 		assert( pMesh );
-		pMesh->read_m( argv[i] );
+		pMesh->read_m( wout[i] );
 		meshes.push_back( pMesh );
 		CHolomorphicFormTrait * pTrait = new CHolomorphicFormTrait(pMesh);
 		assert( pTrait );
