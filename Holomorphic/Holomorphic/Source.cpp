@@ -1,9 +1,9 @@
 #include <math.h>
 #include "../mesh/mesh.h"
-#include "../Trait/HolomorphicFormTrait.h"
-#include "../Trait/HarmonicFormTrait.h"
 
+#include "../Trait/HarmonicFormTrait.h"
 #include "../HarmonicForm/HarmonicForm.h"
+#include "../HoTrait/HolomorphicFormTrait.h"
 #include "../HolomorphicForm/HolomorphicForm.h"
 
 using namespace MeshLib;
@@ -25,6 +25,7 @@ int main( int argc, char * argv[] )
 	cmesh.write_m( argv[3] );
 	wmesh.write_m( argv[4] );
 	//end
+
 	std::list<CMesh*> meshes;
 	std::list<CHolomorphicFormTrait*> traits;
 

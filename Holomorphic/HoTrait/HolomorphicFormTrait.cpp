@@ -21,7 +21,7 @@ CHolomorphicFormTrait::~CHolomorphicFormTrait( )
 
 void CHolomorphicFormTrait::_allocate_edge_trait()
 {
-    m_edge_traits = new CEdgeTrait[m_pMesh->numEdges()];
+    m_edge_traits = new ChoEdgeTrait[m_pMesh->numEdges()];
     assert( m_edge_traits );
 
     int id = 0;
@@ -37,7 +37,7 @@ void CHolomorphicFormTrait::_allocate_face_trait()
 {
     int num = m_pMesh->numFaces() ;
 
-    m_face_traits = new CFaceTrait[num];
+    m_face_traits = new ChoFaceTrait[num];
     assert( m_face_traits );
     
     int id = 0;

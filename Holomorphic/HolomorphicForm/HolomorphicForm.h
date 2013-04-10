@@ -1,5 +1,5 @@
-#ifndef _HARMONIC_FORM_H_
-#define _HARMONIC_FORM_H_
+#ifndef _HOMONIC_FORM_H_
+#define _HOMONIC_FORM_H_
 
 #include  <math.h>
 #include <queue>
@@ -8,7 +8,7 @@
 #include "../Mesh/mesh.h"
 #include "../Mesh/boundary.h"
 #include "../Mesh/iterators.h"
-#include "../Trait/HolomorphicFormTrait.h"
+#include "../HoTrait/HolomorphicFormTrait.h"
 #include "../LinearAlgebra/SparseMatrix.h"
 
 namespace MeshLib

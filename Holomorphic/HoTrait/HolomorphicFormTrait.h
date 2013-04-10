@@ -1,5 +1,5 @@
-#ifndef  _FORM_TRAIT_H_
-#define  _FORM_TRAIT_H_
+#ifndef  _FORM_HOTRAIT_H_
+#define  _FORM_HOTRAIT_H_
 
 #include <map>
 #include <vector>
@@ -13,7 +13,7 @@
 
 namespace MeshLib
 {
-  class CFaceTrait: public CTrait
+  class ChoFaceTrait: public CTrait
   {
   public:
 
@@ -21,12 +21,12 @@ namespace MeshLib
     CPoint  m_normal;
     CPoint  m_du;
 
-    CFaceTrait() { m_area = 0; };
-    ~CFaceTrait() {};
+    ChoFaceTrait() { m_area = 0; };
+    ~ChoFaceTrait() {};
   };
 
   
-class CEdgeTrait : public  CTrait
+class ChoEdgeTrait : public  CTrait
   {
   public:
     double m_length;
@@ -34,8 +34,8 @@ class CEdgeTrait : public  CTrait
     CPoint m_duv;
     std::string m_string;
 
-    CEdgeTrait() { m_length = 0.0; m_w = 0;  };
-    ~CEdgeTrait(){};
+    ChoEdgeTrait() { m_length = 0.0; m_w = 0;  };
+    ~ChoEdgeTrait(){};
 
 	  void read()
 	  {
@@ -54,46 +54,46 @@ class CEdgeTrait : public  CTrait
 	  }
  };
 
-inline double & e_l( CEdge* e ) 
+inline double & hoe_l( CEdge* e ) 
 {
-    CEdgeTrait * pET = (CEdgeTrait*) e->trait();
+    ChoEdgeTrait * pET = (ChoEdgeTrait*) e->trait();
     return pET->m_length;
 };
 
-inline double & e_w( CEdge* e ) 
+inline double & hoe_w( CEdge* e ) 
 {
-    CEdgeTrait * pET = (CEdgeTrait*) e->trait();
+    ChoEdgeTrait * pET = (ChoEdgeTrait*) e->trait();
     return pET->m_w;
 };
 
 
 inline CPoint & e_duv( CEdge* e ) 
 {
-    CEdgeTrait * pET = (CEdgeTrait*) e->trait();
+    ChoEdgeTrait * pET = (ChoEdgeTrait*) e->trait();
     return pET->m_duv;
 };
 
-inline std::string & e_string( CEdge* e ) 
+inline std::string & hoe_string( CEdge* e ) 
 {
-    CEdgeTrait * pET = (CEdgeTrait*) e->trait();
+    ChoEdgeTrait * pET = (ChoEdgeTrait*) e->trait();
     return pET->m_string;
 };
 
 inline double & f_area( CFace* f ) 
 {
-    CFaceTrait * pFT = (CFaceTrait*) f->trait();
+    ChoFaceTrait * pFT = (ChoFaceTrait*) f->trait();
     return pFT->m_area;
 };
 
 inline CPoint & f_normal( CFace * f )
 {
-    CFaceTrait * pFT = (CFaceTrait*) f->trait();
+    ChoFaceTrait * pFT = (ChoFaceTrait*) f->trait();
     return pFT->m_normal;
 };
 
 inline CPoint & f_du( CFace * f )
 {
-    CFaceTrait * pFT = (CFaceTrait*) f->trait();
+    ChoFaceTrait * pFT = (ChoFaceTrait*) f->trait();
     return pFT->m_du;
 };
 
@@ -106,8 +106,8 @@ public:
 protected:
     CMesh * m_pMesh;
 
-    CEdgeTrait          * m_edge_traits;
-    CFaceTrait           *m_face_traits;
+    ChoEdgeTrait          * m_edge_traits;
+    ChoFaceTrait           *m_face_traits;
 
   private:
     //allocate and dellocate traits
@@ -120,4 +120,4 @@ protected:
 };
 
 }
-#endif  _FORM_TRAIT_H_
+#endif  _FORM_HOTRAIT_H_

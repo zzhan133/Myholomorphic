@@ -60,13 +60,13 @@
     <ClInclude Include="..\Trait\HarmonicFormTrait.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\Trait\HolomorphicFormTrait.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\HarmonicForm\HarmonicForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\HolomorphicForm\HolomorphicForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\HoTrait\HolomorphicFormTrait.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -101,13 +101,13 @@
     <ClCompile Include="..\Trait\HarmonicFormTrait.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\Trait\HolomorphicFormTrait.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\HarmonicForm\HarmonicForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\HolomorphicForm\HolomorphicForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\HoTrait\HolomorphicFormTrait.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

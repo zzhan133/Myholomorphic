@@ -64,7 +64,7 @@ void CHolomorphicForm::convert( CFace * f )
 		CHalfEdge * h = *fhiter;
 		he[i] = h;
 		 p[i] = h->source()->point();
-		du[i] = ( h == h->edge()->halfedge(0) )? e_w(h->edge()):-e_w( h->edge() );
+		du[i] = ( h == h->edge()->halfedge(0) )? hoe_w(h->edge()):-hoe_w( h->edge() );
 		i ++;
 	}
 
@@ -105,8 +105,8 @@ CHolomorphicForm::CHolomorphicForm( std::list<CMesh*> & meshes )
 		for( MeshEdgeIterator eiter( m_meshes[i] ); !eiter.end(); ++ eiter )
 		{
 			CEdge * edge = *eiter;
-			e_string( edge ) = edge->string();
-			CEdgeTrait * pT = (CEdgeTrait*) edge->trait();
+			hoe_string( edge ) = edge->string();
+			ChoEdgeTrait * pT = (ChoEdgeTrait*) edge->trait();
 			pT->read();
 		}
 
@@ -183,7 +183,7 @@ void CHolomorphicForm::conjugate()
 		for( MeshEdgeIterator eiter( m_meshes[i] ); !eiter.end(); ++ eiter )
 		{
 			CEdge * e = *eiter;
-			e_duv( e )[0] = e_w( e );
+			e_duv( e )[0] = hoe_w( e );
 			e_duv( e )[1] = 0;
 		
 			int id1 = m_meshes[i]->edgeVertex1(e)->id();
@@ -195,7 +195,7 @@ void CHolomorphicForm::conjugate()
 				CVertex * w2 = m_meshes[k]->idVertex( id2 );
 
 				CEdge * edge = m_meshes[k]->vertexEdge( w1, w2 );
-				e_duv( e )[1] += e_w(edge) * x[k];
+				e_duv( e )[1] += hoe_w(edge) * x[k];
 			}
 
 			char line[1024];

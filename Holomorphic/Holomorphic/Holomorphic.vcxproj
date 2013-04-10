@@ -125,6 +125,7 @@
     <ClInclude Include="..\HarmonicForm\HarmonicForm.h" />
     <ClInclude Include="..\HarTrait\Trait.h" />
     <ClInclude Include="..\HolomorphicForm\HolomorphicForm.h" />
+    <ClInclude Include="..\HoTrait\HolomorphicFormTrait.h" />
     <ClInclude Include="..\LinearAlgebra\Matlab.h" />
     <ClInclude Include="..\LinearAlgebra\SparseMatrix.h" />
     <ClInclude Include="..\Mesh\boundary.h" />
@@ -136,12 +137,12 @@
     <ClInclude Include="..\Mesh\Vertex.h" />
     <ClInclude Include="..\Parser\parser.h" />
     <ClInclude Include="..\Trait\HarmonicFormTrait.h" />
-    <ClInclude Include="..\Trait\HolomorphicFormTrait.h" />
     <ClInclude Include="..\Trait\Trait.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\HarmonicForm\HarmonicForm.cpp" />
     <ClCompile Include="..\HolomorphicForm\HolomorphicForm.cpp" />
+    <ClCompile Include="..\HoTrait\HolomorphicFormTrait.cpp" />
     <ClCompile Include="..\LinearAlgebra\Matlab.cpp" />
     <ClCompile Include="..\LinearAlgebra\SparseMatrix.cpp" />
     <ClCompile Include="..\Mesh\boundary.cpp" />
@@ -151,7 +152,6 @@
     <ClCompile Include="..\Mesh\Vertex.cpp" />
     <ClCompile Include="..\Parser\token.cpp" />
     <ClCompile Include="..\Trait\HarmonicFormTrait.cpp" />
-    <ClCompile Include="..\Trait\HolomorphicFormTrait.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
