@@ -5,6 +5,8 @@
 #include "../HarmonicForm/HarmonicForm.h"
 #include "../HoTrait/HolomorphicFormTrait.h"
 #include "../HolomorphicForm/HolomorphicForm.h"
+#include "../InTrait/IntegrationTrait.h"
+#include "../Integration/Integration.h"
 
 using namespace MeshLib;
 
@@ -54,7 +56,7 @@ int main( int argc, char * argv[] )
 	{
 		CMesh * pM = *miter;
 		char line[1024];
-		sprintf(line,"test_%d.m", id++ );
+		sprintf(line,"kitten.duv_%d.m", id++ );
 		pM->write_m( line );
 	}
 
@@ -70,6 +72,34 @@ int main( int argc, char * argv[] )
 		delete pM;
 	}
 
+	// Integration [3:21/4/10/2013 Zhe]
+	const char* uvout[2] = {"kitten0_uv.m","kitten1_uv.m"};
+	const char* wIn[2] = {"kitten.duv_0.m","kitten.duv_1.m"};
+	const char* uvflat[2] = {"kitten0_flat_uv.m","kitten1_flat_uv.m"};
+	for (int i=0; i<2;i++)
+	{
+		CMesh holo_mesh;
+		CMesh fund_mesh;
+
+		holo_mesh.read_m(wIn[i]);
+		fund_mesh.read_m(argv[4]);
+
+		CIntegrationTrait holo_trait( & holo_mesh );
+		CIntegrationTrait fund_trait( & fund_mesh );
+
+		CIntegration integrator( & holo_mesh, & fund_mesh );
+		integrator._integrate();
+
+		fund_mesh.write_m( uvout[i] );
+		for( MeshVertexIterator viter( &fund_mesh); !viter.end(); ++viter )
+		{
+			CVertex * v = *viter;
+			CPoint2 p = Inv_uv( v );
+			CPoint map(p[0],p[1],0);
+			v->point() = map;
+		}
+		fund_mesh.write_m(uvflat[i]);
+	}
 
 	return 0;
 }
