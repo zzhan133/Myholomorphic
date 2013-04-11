@@ -69,6 +69,12 @@
     <ClInclude Include="..\HoTrait\HolomorphicFormTrait.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\InTrait\IntegrationTrait.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Integration\Integration.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Parser\token.cpp">
@@ -108,6 +114,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\HoTrait\HolomorphicFormTrait.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\InTrait\IntegrationTrait.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Integration\Integration.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

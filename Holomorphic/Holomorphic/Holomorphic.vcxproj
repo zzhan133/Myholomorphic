@@ -126,6 +126,8 @@
     <ClInclude Include="..\HarTrait\Trait.h" />
     <ClInclude Include="..\HolomorphicForm\HolomorphicForm.h" />
     <ClInclude Include="..\HoTrait\HolomorphicFormTrait.h" />
+    <ClInclude Include="..\Integration\Integration.h" />
+    <ClInclude Include="..\InTrait\IntegrationTrait.h" />
     <ClInclude Include="..\LinearAlgebra\Matlab.h" />
     <ClInclude Include="..\LinearAlgebra\SparseMatrix.h" />
     <ClInclude Include="..\Mesh\boundary.h" />
@@ -143,6 +145,8 @@
     <ClCompile Include="..\HarmonicForm\HarmonicForm.cpp" />
     <ClCompile Include="..\HolomorphicForm\HolomorphicForm.cpp" />
     <ClCompile Include="..\HoTrait\HolomorphicFormTrait.cpp" />
+    <ClCompile Include="..\Integration\Integration.cpp" />
+    <ClCompile Include="..\InTrait\IntegrationTrait.cpp" />
     <ClCompile Include="..\LinearAlgebra\Matlab.cpp" />
     <ClCompile Include="..\LinearAlgebra\SparseMatrix.cpp" />
     <ClCompile Include="..\Mesh\boundary.cpp" />
